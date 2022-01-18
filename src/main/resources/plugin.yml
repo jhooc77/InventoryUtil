@@ -1,4 +1,4 @@
-main: com.jhooc77.inventoryutil
+main: com.jhooc77.inventoryutil.Main
 author: BabyMandarinDuck
 api-version: 1.13
 version: 1.0
