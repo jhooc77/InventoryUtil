@@ -9,9 +9,10 @@ Gui gui = new Gui(36, "Inventory Name");
 gui.addGuiCallback(1 -> {
     action.getWhoClicked().sendMessage("Clicked slot number 1");
 }
-
 ```
+
 ## Pageable Inventory
+``` Java
 List<String> exampleList = Arrays.asList("test text", "test text number2", "test text number3");
 Gui.PageableGui<String> pageableGui = new Gui.PageableGui<String>(36, "Inventory Name", exampleList, 1, 3) {
     @Override
@@ -57,3 +58,4 @@ Gui.PageableGui<String> pageableGui = new Gui.PageableGui<String>(36, "Inventory
     }
 };
 pageableGui.open(player);
+```
