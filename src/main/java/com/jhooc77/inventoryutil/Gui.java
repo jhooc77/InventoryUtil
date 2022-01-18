@@ -360,7 +360,7 @@ public class Gui implements InventoryHolder {
 				}
 				
 				if (list.size() > indexOfPage*(page) && getNextPageSlot() != -1) {
-					inventory.setItem(getNextPageSlot(), ItemUtil.Builder.builder().setMaterial(Material.GREEN_STAINED_GLASS_PANE).setDisplayName("§a다음 페이지").build());
+					inventory.setItem(getNextPageSlot(), ItemUtil.Builder.builder().setMaterial(Material.GREEN_STAINED_GLASS_PANE).setDisplayName("§aNext Page").build());
 					slotConsumer.put(getNextPageSlot(), event -> {
 						setPage(page+1);
 					});
@@ -368,7 +368,7 @@ public class Gui implements InventoryHolder {
 					slotConsumer.remove(getNextPageSlot());
 				}
 				if (page > 1 && getPreviousPageSlot() != -1) {
-					inventory.setItem(getPreviousPageSlot(), ItemUtil.Builder.builder().setMaterial(Material.RED_STAINED_GLASS_PANE).setDisplayName("§c이전 페이지").build());
+					inventory.setItem(getPreviousPageSlot(), ItemUtil.Builder.builder().setMaterial(Material.RED_STAINED_GLASS_PANE).setDisplayName("§cPrevious Page").build());
 					slotConsumer.put(getPreviousPageSlot(), event -> {
 						setPage(page-1);
 					});
@@ -409,12 +409,12 @@ public class Gui implements InventoryHolder {
 		}
 
 		public BooleanGui(List<String> description, String trueDescription, String falseDescription) {
-			super(27, "확인");
-			inventory.setItem(11, yes = ItemUtil.Builder.builder().setMaterial(Material.GREEN_STAINED_GLASS).setDisplayName("§a§l예").setLore(trueDescription!=null?new String[] {trueDescription}:new String[0]).build());
+			super(27, "confirm");
+			inventory.setItem(11, yes = ItemUtil.Builder.builder().setMaterial(Material.GREEN_STAINED_GLASS).setDisplayName("§a§lYes").setLore(trueDescription!=null?new String[] {trueDescription}:new String[0]).build());
 			if (description != null) {
 				inventory.setItem(13, ItemUtil.Builder.builder().setMaterial(Material.BOOK).setDisplayName(description.get(0)).setLore(description.size() > 1?description.subList(1, description.size()-1):Collections.EMPTY_LIST).build());
 			}
-			inventory.setItem(15, no = ItemUtil.Builder.builder().setMaterial(Material.RED_STAINED_GLASS).setDisplayName("§c§l아니오").setLore(falseDescription!=null?new String[] {falseDescription}:new String[0]).build());
+			inventory.setItem(15, no = ItemUtil.Builder.builder().setMaterial(Material.RED_STAINED_GLASS).setDisplayName("§c§lNo").setLore(falseDescription!=null?new String[] {falseDescription}:new String[0]).build());
 		}
 
 		public void falseCallback(Consumer<InventoryClickEvent> action) {
