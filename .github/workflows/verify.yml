@@ -3,7 +3,7 @@ name: Verify
 on:
   push:
     branches:
-      - craft_v3
+      - build/paper-api
   pull_request:
     branches:
       - master
